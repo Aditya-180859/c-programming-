@@ -1,3 +1,5 @@
+\\write a power function which raise a number m to power n.
+
 #include<iostream>
 using namespace std;
 
