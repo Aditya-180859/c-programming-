@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+
+class unary
+{
+	char alpha='z';
+	int s;
+	
+	public:
+		void display(void)
+		{
+			cout<<alpha<<endl;
+		}
+		void operator +()
+		{
+			if(alpha=='z'||alpha=='Z')
+			{
+				alpha='A';
+			}
+			s=alpha;
+			s++;
+			alpha=s;
+		}
+};
+
+
+int main()
+{
+	unary u;
+	u.display();
+	
+	+u;
+	u.display();
+	
+	return 0;
+}
