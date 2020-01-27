@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+
+class binary
+{
+	private:
+		int x ,y;
+	public:
+		void display(void);
+		void data(void);
+		binary operator +(binary a)
+		{
+			binary b;
+			b.x=x+a.x;
+			b.y=y+a.y;
+			return b;
+		}
+};
+
+void binary::display(void)
+{
+	cout<<"result"<<endl;
+	cout<<x<<endl;
+	cout<<y<<endl;
+}
+
+void binary::data()
+{
+	cout<<"enter data:"<<endl;
+	cin>>x;
+	cin>>y;
+}
+
+
+int main()
+{
+	binary l,m,n;
+	l.data();
+	m.data();
+	n=l+m;
+	n.display();
+	return 0;
+}
