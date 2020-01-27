@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+
+class Copy
+{
+	private:
+		string first_name;
+		string last_name;
+	public:
+		Copy(Copy &c)
+		{
+			first_name=c.first_name;
+			last_name=c.last_name;
+			cout<<"copy constructor called\n";
+		}
+		
+		Copy(string name,string surname)
+		{
+			first_name =name;
+			last_name=surname;
+		}
+		
+		int show()
+		{
+			cout<<"\nfirst name :"<<first_name<<"\n last name:"<<last_name;
+		}
+};
+
+int main()
+{
+	string name,last;
+	cout<<"enter first name:";
+	cin>>name;
+	cout<<"enter last name:";
+	cin>>last;
+	Copy c(name,last);
+	Copy c1=c;
+	c.show();
+	return 0;
+}
