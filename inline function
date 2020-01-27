@@ -1,0 +1,34 @@
+#include<iostream>
+using namespace std;
+
+class math
+{
+	private:
+		int x;
+	public:
+		inline float square()
+		{
+			return (x*x);
+		}
+		
+		int getdata()
+		{
+			cout<<"enter the number:";
+			cin>>x;
+		}
+		
+		int show(int a)
+		{
+			cout<<"\nSquare of given number:"<<a;
+		}
+};
+
+int main()
+{
+	math m;
+	int result;
+	m.getdata();
+	result=m.square();
+	m.show(result);
+	return 0;
+}
