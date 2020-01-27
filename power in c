@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+
+
+double power(double x, int y=2) 
+{  
+   int i,power=1;
+   if(y == 0)
+      return 1;
+   for(i=1;i<=y;i++)
+      power=power*x;
+   return power;
+} 
+
+int print(int r)
+{
+	cout<<"result is:"<<r;
+}
+
+int main()
+{ 
+   double m;
+   int n,result;
+   cout<<"enter the number";
+   cin>>m;
+   cout<<"enter the power";
+   cin>>n;  
+   result=power(m,n);
+   print(result);
+   return 0; 
+}
