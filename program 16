@@ -1,37 +1,39 @@
-\\program to overload binary function
-
 #include<iostream>
 using namespace std;
 
 class unary
 {
-	char alpha='z';
+	char alpha;
 	int s;
 	
 	public:
-		void display(void)
+		void display()
 		{
 			cout<<alpha<<endl;
 		}
-		void operator +()
+		
+		unary(char word)
 		{
-			if(alpha=='z'||alpha=='Z')
-			{
-				alpha='A';
-			}
-			s=alpha;
-			s++;
-			alpha=s;
+			alpha=word;
+		}
+		unary operator ++()
+		{
+			s=(int)alpha;
+			s=s+1;
+			alpha=(char)s;
+			
 		}
 };
 
 
 int main()
 {
-	unary u;
-	u.display();
+	char alphabet;
 	
-	+u;
+	cout<<"enter a alphabet:";
+	cin>>alphabet;
+	unary u(alphabet);
+	++u;
 	u.display();
 	
 	return 0;
