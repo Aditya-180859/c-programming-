@@ -1,0 +1,46 @@
+//PROGRAM1:WAP A PROGRAM TO FIND GRETEST OF THREE NUMBER USING FUNCTION
+
+SOURCE CODE:
+#include<iostream>
+using namespace std;
+
+class Greatest
+{
+   int a,b,c,greatest;
+   public:
+   	int getdata()
+   	{
+   		cout<<"enter the three number:";
+   		cin>>a>>b>>c;
+   	}
+   	int greater()
+   	{
+   		if(a>b && a>c)
+   		greatest=a;
+   		
+   		else if(b>a && b>c)
+   		greatest=b;
+   		
+   		else
+   		greatest=c;
+   		
+   		
+   		return greatest;
+	}
+	
+	int show(int large)
+	{
+		cout<<"\nthe greatest number is:"<<large;
+	}
+};
+
+
+int main()
+{
+	Greatest g1;
+	int result;
+	g1.getdata();
+	result=g1.greater();
+	g1.show(result);
+	return 0;
+}
