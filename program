@@ -1,0 +1,38 @@
+PROGRAM 2:WRITE A PROGRAM TO FIND THE SUM OF TWO NUMBERS USING FUCTION
+
+#include<iostream>
+using namespace std;
+
+class Sum
+{
+	int a,b,add;
+	
+	public:
+		int getdata()
+		{
+			cout<<"enter two numbers for add:";
+			cin>>a>>b;
+		}
+		
+		int sum()
+		{
+			add=a+b;
+			return add;
+		}
+		
+		int show(int add)
+		{
+			cout<<"sum of both numbers:"<<add;
+		}
+};
+
+
+int main()
+{
+	Sum s;
+	int result;
+	s.getdata();
+	result=s.sum();
+	s.show(result);
+	return 0;
+}
