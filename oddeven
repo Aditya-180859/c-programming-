@@ -1,0 +1,48 @@
+//wap to find a number is odd or even
+
+#include<iostream>
+using namespace std;
+
+class Check
+
+{
+	int a,res;
+	
+	public:
+		int getdata()
+		{
+			cout<<"enter the number:";
+			cin>>a;
+		}
+		
+		int check()
+		{
+			if(a%2==0)
+			res=0;
+			
+			else
+			res=1;
+			
+			return res;
+		}
+		
+		int display(int res)
+		{
+			if(res==0)
+			cout<<"number is even";
+			
+			else
+			cout<<"number is odd";
+		}
+};
+
+
+int main()
+{
+	Check c;
+	char result;
+	c.getdata();
+	result=c.check();
+	c.display(result);
+	return 0;
+}
