@@ -1,0 +1,83 @@
+//WAP for hybrid inheritance
+
+#include<iostream>
+using namespace std;
+
+class Student
+{
+	char name[20];
+	int roll;
+	
+	public:
+		int getdata()
+		{
+			cout<<"enter the name of student:";
+			cin>>name;
+			
+			cout<<"\nenter roll number of student:";
+			cin>>roll;
+		}
+		
+		int display()
+		{
+			cout<<"\nName of student:"<<name;
+			cout<<"\nRoll number of student:"<<roll;
+		}
+};
+
+class Marks:public Student
+{
+	int sub1,sub2;
+	
+	public:
+		int getdata()
+		{
+			cout<<"\nenter the marks of first subject:";
+			cin>>sub1;
+			
+			cout<<"\nenter the mark of second subject:";
+			cin>>sub2;
+			return (sub1+sub2);
+		}
+};
+
+class Physical
+{
+	int mark;
+	
+	public:
+		int getdata()
+		{
+			cout<<"\nenter the marks of physical:";
+			cin>>mark;
+			
+			return mark;
+		}
+};
+
+class Total:public Physical,public Marks
+{
+	int total;
+	public:
+	void info()
+	{
+		total=Marks::getdata()+Physical::getdata();
+	}
+	
+	void display()
+	{
+		cout<<"\nTotal marks obtained:"<<total;
+	}
+
+};
+
+int main()
+{
+	Total t;
+	Student s;
+	s.getdata();
+	t.info();
+	s.display();
+	t.display();
+	return 0;
+}
