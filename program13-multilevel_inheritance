@@ -1,0 +1,82 @@
+//WAP for multi level inheritance
+
+#include<iostream>
+using namespace std;
+
+class Person
+{
+	char name[25],gender[6];
+	int age;
+	
+	public:
+		void getdata()
+		{
+			cout<<"enter your name:";
+			cin>>name;
+			
+			cout<<"\nenter the age:";
+			cin>>age;
+			
+			cout<<"\nenter the gender :";
+			cin>>gender;
+		}
+		
+		void display()
+		{
+			cout<<"\nName of person:"<<name;
+			cout<<"\nAge of person:"<<age;
+			cout<<"\nGender of person:"<<gender;
+		}
+};
+
+class Student: public Person
+{
+	char clas[15];
+	int roll;
+	public:
+		void getdata()
+		{
+			Person::getdata();
+			cout<<"\nenter the class in which student studied:";
+			cin>>clas;
+			
+			cout<<"\nenter roll number of student:";
+			cin>>roll;
+        }
+		
+		void display()
+		{
+			Person::display();
+			cout<<"\nclass of student:"<<clas;
+			cout<<"\nroll number of student:"<<roll;
+				 } 		
+};
+
+
+class Subject:public Student
+{
+	char subject[10];
+	public:
+		void getdata()
+		{
+			Student::getdata();
+			cout<<"\nenter student favorite subject:";
+			cin>>subject;
+		}
+		
+		void display()
+		{
+			Student::display();
+			cout<<"\nStudent favorite subject:"<<subject;
+		}
+};
+
+
+int main()
+{
+	Subject s;
+	cout<<"Detail of student:\n";
+	s.getdata();
+	s.display();
+	return 0;
+}
