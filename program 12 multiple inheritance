@@ -1,0 +1,49 @@
+//WAP for multiple inherutance
+
+#include<iostream>
+using namespace std;
+
+class Perimeter
+{
+	public:
+		int getdata(int l,int b)
+		{
+			return 2*(l+b);
+		}
+};
+
+class Area
+{
+	public:
+		int getdata(int l,int b)
+		{
+			return l*b;
+		}
+};
+
+class Rectangle:public Area,public Perimeter
+{
+	int length,bredth;
+	public:
+		Rectangle()
+	    {
+		    length=15;
+		    bredth=14;
+	    }
+	    
+	    int display()
+	    {
+	    	cout<<"\nlength of rectangle:"<<length;
+	    	cout<<"\nBreadth of rectange:"<<bredth;
+	    	cout<<"\nArea of rectangle:"<<Area::getdata(length,bredth);
+	    	cout<<"\nperimetre of rectangle::"<<Perimeter::getdata(length,bredth);
+		}
+};
+
+
+int main()
+{
+	Rectangle r;
+	r.display();
+	return 0;
+}
