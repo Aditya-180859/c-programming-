@@ -1,0 +1,84 @@
+//WAP to show the concept of containership
+
+#include<iostream>
+using namespace std;
+
+class Student
+{
+	char name[25];
+	int roll_no;
+	
+	public:
+		int getdata()
+		{
+			cout<<"enter the name of student:";
+			cin>>name;
+			
+			cout<<"\nenter the roll number if student:";
+			cin>>roll_no;
+		}
+		
+		int display()
+		{
+			cout<<"\nName of student:"<<name;
+			cout<<"\nRoll number of student:"<<roll_no;
+		}
+};
+
+class Department
+{
+	char depart_name[15],branch[15];
+	
+	public:
+		void getdata()
+		{
+			cout<<"\nName of the department:";
+			cin>>depart_name;
+			
+			cout<<"\nName of branch:";
+			cin>>branch;
+		}
+		
+		void display()
+		{
+			cout<<"\nName of Department:"<<depart_name;
+			cout<<"\nBranch name:"<<branch;
+		}
+};
+
+class Publication
+{
+	int number,year;
+	Department depart;
+	Student stud;
+	
+	public:
+		int getdata()
+		{
+			stud.getdata();
+			depart.getdata();
+			
+			cout<<"\nNumber of publication published:";
+			cin>>number;
+			
+			cout<<"\nYear of publication:";
+			cin>>year;
+		}
+		
+		int display()
+		{
+			stud.display();
+			depart.display();
+			
+			cout<<"\nNumber of publication published:"<<number;
+			cout<<"\nYear of publication:"<<year;
+		}
+};
+
+int main()
+{
+	Publication p;
+	p.getdata();
+	p.display();
+	return 0;
+}
