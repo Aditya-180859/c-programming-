@@ -1,0 +1,33 @@
+//WAP to display element of array
+
+#include<iostream>
+using namespace std;
+
+class Array
+{
+	int a[4];
+    public:
+    	int getdata()
+    	{
+    		cout<<"enter the arrary:";
+    		for(int i=0;i<4;i++)
+    		{
+    			cin>>a[i];
+			}
+		}
+		
+		int display()
+		{
+			cout<<"array are:";
+			for(int i=0;i<4;i++)
+			cout<<"\n"<<a[i];
+		}
+};
+
+int main()
+{
+	Array a;
+	a.getdata();
+	a.display();
+	return 0;
+}
